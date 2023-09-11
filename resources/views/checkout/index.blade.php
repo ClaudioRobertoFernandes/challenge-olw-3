@@ -7,7 +7,11 @@
 
         <div class="relative mx-auto grid max-w-7xl grid-cols-1 gap-x-16 lg:grid-cols-2 lg:px-8 lg:pt-16">
 
-            <section aria-labelledby="summary-heading" class="bg-tertiary-800 py-12 text-indigo-300 md:px-10 lg:col-start-2 lg:row-start-1 lg:mx-auto lg:w-full lg:max-w-lg lg:bg-transparent lg:px-0 lg:pb-24 lg:pt-0">
+            <section
+                aria-labelledby="summary-heading"
+                class="bg-tertiary-800 py-12 text-indigo-300 md:px-10 lg:col-start-2 lg:row-start-1
+                lg:mx-auto lg:w-full lg:max-w-lg lg:bg-transparent lg:px-0 lg:pb-24 lg:pt-0"
+            >
 
                 <div class="mx-auto max-w-2xl px-4 lg:max-w-none lg:px-0">
 
@@ -39,7 +43,10 @@
                 </div>
             </section>
 
-            <section aria-labelledby="payment-and-shipping-heading" class="py-16 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:w-full lg:max-w-lg lg:pb-24 lg:pt-0">
+            <section
+                aria-labelledby="payment-and-shipping-heading"
+                class="py-16 lg:col-start-1 lg:row-start-1
+                lg:mx-auto lg:w-full lg:max-w-lg lg:pb-24 lg:pt-0">
                 <form>
                     <div class="mx-auto max-w-2xl px-4 lg:max-w-none lg:px-0">
                         <div>
@@ -63,13 +70,24 @@
                                 <div class="col-span-3 sm:col-span-4">
                                     <x-input-label for="card-number" value="Numero do cartao" />
                                     <div class="mt-1">
-                                        <x-text-input type="text" id="card-number" name="card-number" autocomplete="cc-number" />
+                                        <x-text-input
+                                            type="text"
+                                            id="card-number"
+                                            name="card-number"
+                                            autocomplete="cc-number"
+                                        />
                                     </div>
                                 </div>
 
                                 <div class="col-span-2 sm:col-span-3">
-                                    <x-input-label for="expiration-date" value="Data de expiração (MM/YY)" />
-                                    <x-text-input type="text" id="expiration-date" name="expiration-date" autocomplete="cc-exp" />
+                                    <x-input-label
+                                        for="expiration-date"
+                                        value="Data de expiração (MM/YY)" />
+                                    <x-text-input
+                                        type="text"
+                                        id="expiration-date"
+                                        name="expiration-date"
+                                        autocomplete="cc-exp" />
                                 </div>
 
                                 <div>
