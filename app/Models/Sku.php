@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Sku extends Model
@@ -16,10 +18,13 @@ class Sku extends Model
         'price',
     ];
 
-    public function skus(): BelongsTo
+    public function skus(): BelongsToMany
+    {
+        return $this->belongsToMany(Order::class)->using(OrderSku::class);
+    }
+
+    public function product(): BelongsTo
     {
         return $this->belongsTo(Product::class);
     }
-
-
 }

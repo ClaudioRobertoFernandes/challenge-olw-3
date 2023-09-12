@@ -9,8 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Brand extends Model
 {
-//    use HasFactory;
-    use softDeletes;
+    use HasFactory, softDeletes;
 
     protected $fillable = [
         'name',

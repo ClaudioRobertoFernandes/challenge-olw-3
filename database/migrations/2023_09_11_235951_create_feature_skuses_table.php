@@ -13,11 +13,10 @@ return new class extends Migration
     {
         Schema::create('feature_sku', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('feature_id')->constrained();
             $table->foreignId('sku_id')->constrained();
+            $table->foreignId('feature_id')->constrained();
             $table->string('value');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

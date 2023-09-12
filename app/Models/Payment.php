@@ -2,26 +2,25 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Payment extends Model
-{
-//    use HasFactory;
-    use SoftDeletes;
+class Payment extends Model {
+
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
-
         'external_id',
         'order_id',
-        'status',
         'method',
+        'status',
         'installments',
-        'aproved',
+        'approved_at',
         'qr_code_64',
         'qr_code',
-        'ticket_url'
+        'ticket_url',
     ];
 
     public function order(): BelongsTo

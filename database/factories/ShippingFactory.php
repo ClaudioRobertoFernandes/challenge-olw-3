@@ -17,7 +17,15 @@ class ShippingFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'address' => $this->faker->streetAddress(),
+            'city' => $this->faker->city(),
+            'state' => $this->faker->stateAbbr(),
+            'zipcode' => $this->faker->numberBetween(13720000, 14098022),
+            'district' => $this->faker->word(),
+            'number' => $this->faker->numberBetween(0, 300),
+            'complement' => $this->faker->word(),
+            'tracking_code' => $this->faker->word(),
+            'status' => $this->faker->randomNumber(5)
         ];
     }
 }

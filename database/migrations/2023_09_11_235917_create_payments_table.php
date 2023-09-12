@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('external_id')->nullable();
             $table->foreignId('order_id')->constrained();
-            $table->string('status')->nullable(); // ENUN
-            $table->integer('method'); // ENUN
+            $table->integer('method'); //ENUM
+            $table->integer('status'); //ENUM
             $table->integer('installments')->nullable();
-            $table->dateTime('aproved')->nullable();
+            $table->dateTime('approved_at')->nullable();
             $table->text('qr_code_64')->nullable();
             $table->text('qr_code')->nullable();
             $table->text('ticket_url')->nullable();

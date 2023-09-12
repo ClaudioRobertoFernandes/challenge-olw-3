@@ -2,11 +2,11 @@
 
 namespace Database\Factories;
 
-use App\Models\OrderSku;
+use App\Models\Sku;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends Factory<OrderSku>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\OrderSku>
  */
 class OrderSkuFactory extends Factory
 {
@@ -17,8 +17,13 @@ class OrderSkuFactory extends Factory
      */
     public function definition(): array
     {
+
+        $sku = Sku::with('product')->inRandomOrder()->first();
         return [
-            //
+            'sku_id' => $sku->id,
+            'product' => $sku->toJson(),
+            'quantity' => $this->faker->randomDigitNot(0),
+            'unitary_price' => $sku->price
         ];
     }
 }

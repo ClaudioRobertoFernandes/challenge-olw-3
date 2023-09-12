@@ -2,18 +2,15 @@
 
 namespace App\Models;
 
-use App\Enums\OrderStatusEnum;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class OrderSku extends Pivot
-{
-//    use HasFactory;
-    use SoftDeletes;
+class OrderSku extends Pivot {
+
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'order_id',
@@ -23,18 +20,17 @@ class OrderSku extends Pivot
         'unitary_price',
     ];
 
-    protected $casts
-            = [
-                'status' => OrderStatusEnum::class,
-            ];
+    protected $casts = [
+        'product' => 'json'
+    ];
 
     public function order(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Order::class);
     }
 
-    public function sku(): BelongsToMany
+    public function sku(): BelongsTo
     {
-        return $this->belongsToMany(Sku::class)->using(__CLASS__);
+        return $this->belongsTo(Sku::class);
     }
 }

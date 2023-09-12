@@ -17,10 +17,10 @@ return new class extends Migration
             $table->string('address');
             $table->string('city');
             $table->string('state');
-            $table->string('zip_code');
-            $table->string('neighborhood');
+            $table->string('zipcode');
+            $table->string('district');
             $table->string('number');
-            $table->string('complement');
+            $table->string('complement')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

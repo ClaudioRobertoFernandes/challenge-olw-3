@@ -8,14 +8,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class FeatureSkus extends Model
 {
-//    use HasFactory;
     use SoftDeletes;
 
     protected $fillable = [
-        'feature_id',
         'sku_id',
+        'feature_id',
         'value',
     ];
-
-
 }
