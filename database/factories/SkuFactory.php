@@ -2,10 +2,11 @@
 
 namespace Database\Factories;
 
+use App\Models\Sku;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Sku>
+ * @extends Factory<Sku>
  */
 class SkuFactory extends Factory
 {
@@ -19,7 +20,6 @@ class SkuFactory extends Factory
         return [
             'name' => $this->faker->word(),
             'price' => $this->faker->randomFloat(2, 500, 1000),
-            'description' => $this->faker->paragraph(1)
         ];
     }
 }

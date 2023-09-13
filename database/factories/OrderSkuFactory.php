@@ -2,11 +2,12 @@
 
 namespace Database\Factories;
 
+use App\Models\OrderSku;
 use App\Models\Sku;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\OrderSku>
+ * @extends Factory<OrderSku>
  */
 class OrderSkuFactory extends Factory
 {
